@@ -1,0 +1,9 @@
+Purple: 9B5DE5
+Magenta:F15BB5
+Yellow: FEE440
+Blue: 00BBF9
+Green: 00F5D4
+
+
+Source:
+https://coolors.co/palette/9b5de5-f15bb5-fee440-00bbf9-00f5d4

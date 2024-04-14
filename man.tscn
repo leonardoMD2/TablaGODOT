@@ -1,0 +1,263 @@
+[gd_scene load_steps=14 format=3 uid="uid://cp43dr8esd87f"]
+
+[ext_resource type="Script" path="res://man.gd" id="1_jajh7"]
+[ext_resource type="Texture2D" uid="uid://d2abchee7tucm" path="res://tabla-periodica.png" id="1_rp87c"]
+[ext_resource type="Texture2D" uid="uid://bbohuwo8gh5kk" path="res://helio.png" id="3_aw64d"]
+[ext_resource type="Texture2D" uid="uid://cs0na15ydcbtb" path="res://litio.png" id="4_s4r0r"]
+[ext_resource type="Script" path="res://PopUp.gd" id="5_bw7nc"]
+[ext_resource type="FontFile" uid="uid://bpn8ip7ohwna4" path="res://Roboto-Medium.ttf" id="6_6rnca"]
+[ext_resource type="Texture2D" uid="uid://23tvpjhk6gcf" path="res://pastelcolorspheresballs/PastelColorSpheresBalls/64x64/bluesphere.png" id="7_1t0qi"]
+[ext_resource type="Texture2D" uid="uid://7xedxykbmh8j" path="res://pastelcolorspheresballs/PastelColorSpheresBalls/64x64/magentasphere.png" id="8_xjohp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yuube"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihumw"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_m45kg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_1t0qi")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_xjohp")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(112, 94)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(381, 366)]
+}
+
+[sub_resource type="Animation" id="Animation_6fw7k"]
+resource_name = "test"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_1t0qi")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_xjohp")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3.2, 4.2, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(112, 94), Vector2(77, 246), Vector2(181, 390), Vector2(387, 364), Vector2(397, 147), Vector2(106, 61)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3.2, 4.2, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(381, 366), Vector2(421, 237), Vector2(391, 98), Vector2(131, 74), Vector2(102, 358), Vector2(374, 393)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_btdkf"]
+_data = {
+"RESET": SubResource("Animation_m45kg"),
+"test": SubResource("Animation_6fw7k")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jajh7")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 648.0
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -62.0
+offset_right = 92.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+
+[node name="Button" type="Button" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_yuube")
+icon = ExtResource("1_rp87c")
+icon_alignment = 1
+
+[node name="Button2" type="Button" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_yuube")
+icon = ExtResource("3_aw64d")
+icon_alignment = 1
+
+[node name="Button3" type="Button" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_yuube")
+icon = ExtResource("4_s4r0r")
+icon_alignment = 1
+
+[node name="PopUp" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ihumw")
+script = ExtResource("5_bw7nc")
+
+[node name="BoxContainer" type="BoxContainer" parent="PopUp"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = -20.0
+offset_right = 35.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical = true
+
+[node name="PlaySound" type="Button" parent="PopUp/BoxContainer"]
+layout_mode = 2
+text = "Ejemplo"
+
+[node name="Sprite2D" type="Sprite2D" parent="PopUp/BoxContainer"]
+position = Vector2(35.5, -36)
+texture = ExtResource("4_s4r0r")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="PopUp/BoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopUp/BoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Z: "
+
+[node name="Data" type="Label" parent="PopUp/BoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PopUp"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -18.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "X"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PopUp"]
+
+[node name="Label" type="Label" parent="PopUp"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_6rnca")
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PopUp"]
+libraries = {
+"": SubResource("AnimationLibrary_btdkf")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="PopUp"]
+position = Vector2(112, 94)
+texture = ExtResource("7_1t0qi")
+
+[node name="Sprite2D2" type="Sprite2D" parent="PopUp"]
+position = Vector2(381, 366)
+texture = ExtResource("8_xjohp")
+
+[connection signal="pressed" from="Panel/GridContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/GridContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="PopUp/BoxContainer/PlaySound" to="PopUp" method="_on_play_sound_pressed"]
+[connection signal="pressed" from="PopUp/Button" to="PopUp" method="_on_button_pressed"]

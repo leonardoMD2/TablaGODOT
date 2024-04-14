@@ -1,0 +1,16 @@
+{
+	"H":{
+		"nombre": "Hidrogeno",
+		"Z":"Z: 1",
+		"img":"res://tabla-periodica.png",
+		"data":"Datos random jejejej",
+		"audio":"res://Grabación.mp3"
+	},
+	"He":{
+		"nombre": "Helio",
+		"Z":"Z: 2",
+		"img":"res://helio.png",
+		"data":"Datos random2 jejejej",
+		"audio":"res://Grabación.mp3"
+	}
+}
