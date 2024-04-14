@@ -3,14 +3,14 @@
 		"nombre": "Hidrogeno",
 		"Z":"Z: 1",
 		"img":"res://tabla-periodica.png",
-		"data":"Datos random jejejej",
+		"data":"El hidrógeno es uno de los elementos que componen las estrellas",
 		"audio":"res://Grabación.mp3"
 	},
 	"He":{
 		"nombre": "Helio",
 		"Z":"Z: 2",
 		"img":"res://helio.png",
-		"data":"Datos random2 jejejej",
+		"data":"El Helio es un gas noble",
 		"audio":"res://Grabación.mp3"
 	}
 }

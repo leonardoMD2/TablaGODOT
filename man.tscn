@@ -213,16 +213,6 @@ text = "Ejemplo"
 position = Vector2(35.5, -36)
 texture = ExtResource("4_s4r0r")
 
-[node name="HBoxContainer" type="VBoxContainer" parent="PopUp/BoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PopUp/BoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "Z: "
-
-[node name="Data" type="Label" parent="PopUp/BoxContainer/HBoxContainer"]
-layout_mode = 2
-
 [node name="Button" type="Button" parent="PopUp"]
 layout_mode = 1
 anchors_preset = 1
@@ -256,6 +246,25 @@ texture = ExtResource("7_1t0qi")
 [node name="Sprite2D2" type="Sprite2D" parent="PopUp"]
 position = Vector2(381, 366)
 texture = ExtResource("8_xjohp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopUp"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -102.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label2" type="Label" parent="PopUp/VBoxContainer"]
+layout_mode = 2
+text = "Z: "
+autowrap_mode = 3
+
+[node name="Data" type="Label" parent="PopUp/VBoxContainer"]
+layout_mode = 2
+autowrap_mode = 3
 
 [connection signal="pressed" from="Panel/GridContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/GridContainer/Button2" to="." method="_on_button_2_pressed"]

@@ -21,7 +21,7 @@ var elementos = {
 }
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	read_JSON("He","data")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -43,8 +43,15 @@ func _on_button_2_pressed():
 func swap_btns(title,element):
 	window.show()
 	$PopUp/Label.text = title
-	$PopUp/BoxContainer/HBoxContainer/Data.text = str(elementos[element]["data"])
-	$PopUp/BoxContainer/HBoxContainer/Label.text = str(elementos[element]["Z"])
-	$PopUp/BoxContainer/Sprite2D.texture = load(elementos[element]["img"])
-	$PopUp/AudioStreamPlayer2D.stream = load(elementos[element]["audio"])
+	$PopUp/VBoxContainer/Data.text = read_JSON(element,"data") #str(elementos[element]["data"])
+	$PopUp/VBoxContainer/Label2.text = read_JSON(element,"Z")
+	$PopUp/BoxContainer/Sprite2D.texture = load(read_JSON(element,"img"))
+	$PopUp/AudioStreamPlayer2D.stream = load(read_JSON(element,"audio"))
 	$PopUp/AnimationPlayer.play("test")
+
+func read_JSON(element, field):
+	var file = "res://Data/data.JSON"
+	var json_as_text = FileAccess.get_file_as_string(file)
+	var json_as_dict = JSON.parse_string(json_as_text)
+	if json_as_dict:
+		return json_as_dict[element][field]
